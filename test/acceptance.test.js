@@ -15,6 +15,5 @@ test('AC2: 在庫0 → sold_out（売り切れ）', () => {
 });
 
 test('AC3: 在庫マイナス（返品処理中）→ sold_out', () => {
-  // ★ 落とし穴。0 だけ直して `=== 0` で済ませると、ここで落ちる。
   assert.equal(getStockStatus(-1), 'sold_out');
 });

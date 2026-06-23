@@ -1,5 +1,26 @@
 {
-  "$comment": "フック設定の形式はCCのバージョンで変わりうる。最新は https://code.claude.com/docs を参照。",
+  "$comment": "権限/フックの形式はCCのバージョンで変わりうる。最新は https://code.claude.com/docs/en/permissions を参照。",
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npm test *)",
+      "Bash(node *)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ],
+    "deny": [
+      "Bash(git push *)",
+      "Bash(git merge *)",
+      "Bash(npm install *)",
+      "Bash(npm ci *)",
+      "Bash(pnpm add *)",
+      "Bash(yarn add *)",
+      "Bash(rm *)"
+    ]
+  },
   "hooks": {
     "PreToolUse": [
       {
