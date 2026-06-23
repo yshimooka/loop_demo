@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      # 依存ゼロなので install は不要
+      - name: Lint
+        run: npm run lint
+      - name: Unit tests (CIゲート)
+        run: npm test
+      # 受入基準は検査役（別ジョブ/別エージェント）が見る想定。
+      # デモでは手元で `npm run verify` を実行する。

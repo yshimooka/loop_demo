@@ -1,0 +1,13 @@
+{
+  "name": "loop-demo-stock",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "AIコーディング講義 Loopデモ用の最小リポジトリ（依存ゼロ）",
+  "scripts": {
+    "test": "node --test test/stock.test.js",
+    "verify": "node --test test/acceptance.test.js",
+    "lint": "node scripts/lint.mjs",
+    "check": "npm run lint && npm test && npm run verify"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$comment": "フック設定の形式はCCのバージョンで変わりうる。最新は https://code.claude.com/docs を参照。",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "bash $CLAUDE_PROJECT_DIR/scripts/guard.sh" }
+        ]
+      }
+    ]
+  }
+}
