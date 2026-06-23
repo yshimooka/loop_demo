@@ -11,10 +11,8 @@ const STATUS = {
  * @returns {'in_stock' | 'sold_out'}
  */
 export function getStockStatus(quantity) {
-  if (quantity > 0) {
-    return STATUS.IN_STOCK;
+  if (quantity <= 0) {
+    return STATUS.SOLD_OUT;
   }
-  // BUG: コピペミス。0・マイナスのときも IN_STOCK を返してしまう。
-  // 本来は SOLD_OUT を返すべき。
   return STATUS.IN_STOCK;
 }
