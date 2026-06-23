@@ -14,7 +14,5 @@ export function getStockStatus(quantity) {
   if (quantity > 0) {
     return STATUS.IN_STOCK;
   }
-  // BUG: コピペミス。0・マイナスのときも IN_STOCK を返してしまう。
-  // 本来は SOLD_OUT を返すべき。
-  return STATUS.IN_STOCK;
+  return STATUS.SOLD_OUT;
 }
